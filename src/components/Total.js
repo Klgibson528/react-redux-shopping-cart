@@ -7,12 +7,10 @@ function mapStateToProps(state) {
     };
 }
 
-class Total extends Component {
-    render() {
+const Total = ({total}) => {
         return (
-            <React.Fragment>$ {this.props.total}</React.Fragment>
+            <React.Fragment>$ {total}</React.Fragment>
         );
-    }
 }
 
 export default connect(
