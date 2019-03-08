@@ -12,19 +12,19 @@ function mapStateToProps(state) {
 class AddItem extends Component {
     constructor(props) {
         super(props)
-        this.state = { item: '', price:0 , id:'' }
+        this.state = { item: '', price: 0, id: '' }
     }
     addItem = (e) => {
         e.preventDefault()
         console.log('add item')
-        this.props.dispatch({ type: "ADD_ITEM", item: {name:this.state.item, price:parseInt(this.state.price), id:uuidv4()} })
+        this.props.dispatch({ type: "ADD_ITEM", item: { name: this.state.item, price: parseInt(this.state.price), id: uuidv4() } })
     }
 
     handleItemChange = (e) => {
-        this.setState({item:e.target.value})
+        this.setState({ item: e.target.value })
     }
     handlePriceChange = (e) => {
-        this.setState({price:e.target.value})
+        this.setState({ price: e.target.value })
     }
 
     render() {

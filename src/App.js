@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AddItem from './components/AddItem';
 import Cart from './components/Cart'
+import Total from './components/Total'
 
 class App extends Component {
   addItem(item) {
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Shopping Cart!</h1>
+        Total: <Total />
         <AddItem />
         <Cart />
 

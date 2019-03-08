@@ -11,7 +11,7 @@ class Total extends Component {
     render() {
         return (
             <div>
-{this.props.total}
+                {this.props.total}
             </div>
         );
     }

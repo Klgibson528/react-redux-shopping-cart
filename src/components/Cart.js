@@ -10,11 +10,13 @@ function mapStateToProps(state) {
 
 class Cart extends Component {
     handleDelete = (item) => {
-        this.props.dispatch({type:'DELETE_ITEM', item:item}) 
+        // e.preventDefault()
+        // console.log(e.target.id)
+        this.props.dispatch({ type: 'DELETE_ITEM', item: item })
     }
     render() {
         const items = this.props.cart.map(item => {
-            return <div key={item.name}><li>{item.name} - {item.price}</li><button onClick={this.handleDelete(item)}>Remove</button></div>
+            return <div key={item.id}><li>{item.name} - {item.price}</li><button id={item.id} onClick={() => { this.handleDelete(item) }}>Remove</button></div>
         })
         return (
             <div>
