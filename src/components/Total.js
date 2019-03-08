@@ -10,9 +10,7 @@ function mapStateToProps(state) {
 class Total extends Component {
     render() {
         return (
-            <div>
-                {this.props.total}
-            </div>
+            <React.Fragment>$ {this.props.total}</React.Fragment>
         );
     }
 }

@@ -16,8 +16,9 @@ class AddItem extends Component {
     }
     addItem = (e) => {
         e.preventDefault()
-        console.log('add item')
-        this.props.dispatch({ type: "ADD_ITEM", item: { name: this.state.item, price: parseInt(this.state.price), id: uuidv4() } })
+        const form = document.getElementById('form')
+        form.reset()
+        this.props.dispatch({ type: "ADD_ITEM", item: { name: this.state.item, price: parseFloat(this.state.price), id: uuidv4() } })
     }
 
     handleItemChange = (e) => {
@@ -29,9 +30,9 @@ class AddItem extends Component {
 
     render() {
         return (
-            <form onSubmit={this.addItem}>
-                <label>Item: </label><input placeholder='Item Name' onChange={this.handleItemChange} />
-                <label>Price: </label><input placeholder='Item Price' onChange={this.handlePriceChange} />
+            <form id="form" className="container" onSubmit={this.addItem}>
+                <input placeholder='Item Name' onChange={this.handleItemChange} />
+                <input placeholder='Item Price' onChange={this.handlePriceChange} />
                 <button>ADD ITEM</button>
             </form>
         );

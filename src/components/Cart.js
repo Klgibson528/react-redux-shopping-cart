@@ -16,7 +16,7 @@ class Cart extends Component {
     }
     render() {
         const items = this.props.cart.map(item => {
-            return <div key={item.id}><li>{item.name} - {item.price}</li><button id={item.id} onClick={() => { this.handleDelete(item) }}>Remove</button></div>
+            return <div className="row container" key={item.id}><h5 className="col s10">{item.name}:  ${item.price}</h5><button className="col s2" id={item.id} onClick={() => { this.handleDelete(item) }}>Remove</button></div>
         })
         return (
             <div>
